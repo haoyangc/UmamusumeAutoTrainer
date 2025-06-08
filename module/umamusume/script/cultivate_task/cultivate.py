@@ -185,6 +185,7 @@ def script_cultivate_event(ctx: UmamusumeContext):
     img = ctx.ctrl.get_screen()
     event_name, selector_list = parse_cultivate_event(ctx, img)
     log.debug("当前事件：%s", event_name)
+    #log.warning(selector_list)
     if len(selector_list) != 0 and len(selector_list) != 1:
         time.sleep(0.5)
         # 避免出现选项残缺的情况，这里重新解析一次
