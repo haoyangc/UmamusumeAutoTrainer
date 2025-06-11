@@ -1,6 +1,7 @@
 *.pyc
 venv
 .idea
-userdata
+# include userdata to include commit various presets
+#userdata
 **/__pycache__
 .vscode
