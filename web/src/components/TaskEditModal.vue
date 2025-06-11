@@ -833,6 +833,8 @@ export default {
       )
     },
     applyPresetRace: function(){
+      console.log(`using presets named: ${this.presetsUse.name}`)
+      this.presetNameEdit = this.presetsUse.name
       this.extraRace = this.presetsUse.race_list
       this.expectSpeedValue = this.presetsUse.expect_attribute[0]
       this.expectStaminaValue = this.presetsUse.expect_attribute[1]
