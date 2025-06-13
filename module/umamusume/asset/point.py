@@ -90,6 +90,7 @@ CULTIVATE_TOO_MUCH_RACE_WARNING_CONFIRM = ClickPoint(ClickPointType.CLICK_POINT_
 
 CULTIVATE_LEVEL_RESULT_CONFIRM = ClickPoint(ClickPointType.CLICK_POINT_TYPE_COORDINATE, None, Coordinate(360, 1175), "养成等级-下一页", None)
 CULTIVATE_FACTOR_RECEIVE_CONFIRM = ClickPoint(ClickPointType.CLICK_POINT_TYPE_COORDINATE, None, Coordinate(360, 1175), "因子获取-下一页", None)
+CULTIVATE_FACTOR_DOUBLE_CONFIRM = ClickPoint(ClickPointType.CLICK_POINT_TYPE_COORDINATE, None, Coordinate(520, 1175), "确定因子确认-下一页", None)
 HISTORICAL_RATING_UPDATE_CONFIRM = ClickPoint(ClickPointType.CLICK_POINT_TYPE_COORDINATE, None, Coordinate(360, 1115), "历代评分更新-下一页", None)
 SCENARIO_RATING_UPDATE_CONFIRM = ClickPoint(ClickPointType.CLICK_POINT_TYPE_COORDINATE, None, Coordinate(360, 1115), "历代评分更新-下一页", None)
 
