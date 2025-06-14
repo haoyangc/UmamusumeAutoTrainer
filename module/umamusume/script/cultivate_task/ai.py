@@ -192,18 +192,19 @@ def get_training_basic_attribute_score(ctx: UmamusumeContext, turn_info: TurnInf
             incr = [turn_info.training_info_list[i].speed_incr, turn_info.training_info_list[i].stamina_incr,
                     turn_info.training_info_list[i].power_incr, turn_info.training_info_list[i].will_incr,
                     turn_info.training_info_list[i].intelligence_incr]
+            #log.debug(f"incr[{i}]:{incr}")
             rating_incr = 0
             for j in range(len(incr)):
                 if incr[j] != 0 and turn_uma_attr[j] <= cultivate_expect_attribute[j]:
                     attr_difference = turn_expect_attribute[j] - turn_uma_attr[j]
                     # rating_incr += get_basic_status_score(incr[j] + turn_uma_attr[j]) - get_basic_status_score(turn_uma_attr[j])
                     if j == 3:
-                        rating_incr += incr[j]
+                        #直接忽略毅力增长
+                        #rating_incr += incr[j]
+                        rating_incr += 0
                     else:
                         if attr_difference >= incr[j]:
-                            #直接忽略毅力增长
-                            #rating_incr += incr[j]
-                            rating_incr += 0
+                            rating_incr += incr[j]
                         else:
                             if attr_difference < 0:
                                 attr_difference = 0
