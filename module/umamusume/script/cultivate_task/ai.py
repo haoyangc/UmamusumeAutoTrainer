@@ -201,16 +201,20 @@ def get_training_basic_attribute_score(ctx: UmamusumeContext, turn_info: TurnInf
                         rating_incr += incr[j]
                     else:
                         if attr_difference >= incr[j]:
-                            rating_incr += incr[j]
+                            #直接忽略毅力增长
+                            #rating_incr += incr[j]
+                            rating_incr += 0
                         else:
                             if attr_difference < 0:
                                 attr_difference = 0
                             rating_incr += attr_difference
                             overflow_incr = incr[j]-attr_difference
                             if cultivate_expect_attribute[j] - turn_expect_attribute[j] > overflow_incr:
-                                rating_incr += 0.25 * overflow_incr
+                                #rating_incr += 0.25 * overflow_incr
+                                rating_incr += 0.10 * overflow_incr
                             else:
-                                rating_incr += 0.25 * (cultivate_expect_attribute[j] - turn_expect_attribute[j])
+                                #rating_incr += 0.25 * (cultivate_expect_attribute[j] - turn_expect_attribute[j])
+                                rating_incr += 0.10 * (cultivate_expect_attribute[j] - turn_expect_attribute[j])
             # rating_incr += turn_info.training_info_list[i].skill_point_incr * 1.45
             result.append(rating_incr * (1 + extra_weight[i]))
         log.debug("每个训练的原始属性增长得分：" + str(result))
