@@ -179,9 +179,13 @@ def get_training_basic_attribute_score(ctx: UmamusumeContext, turn_info: TurnInf
     if expect_attribute_all_complete:
         log.debug("育成目标属性已达成")
         for i in range(len(turn_info.training_info_list)):
-            incr = [turn_info.training_info_list[i].speed_incr, turn_info.training_info_list[i].stamina_incr,
-                    turn_info.training_info_list[i].power_incr, turn_info.training_info_list[i].will_incr,
-                    turn_info.training_info_list[i].intelligence_incr]
+            #incr = [turn_info.training_info_list[i].speed_incr, turn_info.training_info_list[i].stamina_incr,
+            #        turn_info.training_info_list[i].power_incr, turn_info.training_info_list[i].will_incr,
+            #        turn_info.training_info_list[i].intelligence_incr]
+            # When target reached, favor speed & stamina only
+            incr = [turn_info.training_info_list[i].speed_incr, turn_info.training_info_list[i].stamina_incr * 0.8,
+                    turn_info.training_info_list[i].power_incr * 0.25, turn_info.training_info_list[i].will_incr * 0.01,
+                    turn_info.training_info_list[i].intelligence_incr * 0.1]
             rating_incr = 0
             for j in range(len(incr)):
                 if incr[j] != 0:
